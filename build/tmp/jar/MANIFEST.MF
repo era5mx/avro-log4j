@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: avro-log4j
+Implementation-Version: 1.0
+Bundle-Description: Avro Log4j
+Implementation-Vendor: #RengifoMx
+Built-By: alexander
+Built-JDK: 1.8.0_20 (Azul Systems, Inc.)
+Build-Time: 2015-06-04T19:49:58-0500
+Source-Compatibility: 1.8
+Target-Compatibility: 1.8
+

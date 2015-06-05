@@ -1,0 +1,17 @@
+Converting to the Log4j 2 API
+
+For the most part, converting from the Log4j 1.x API to Log4j 2 should be fairly simple. Many of the log statements will require no modification. However, where necessary the following changes must be made.
+1. The main package in version 1 is org.apache.log4j, in version 2 it is org.apache.logging.log4j
+2. Calls to org.apache.log4j.Logger.getLogger() must be modified to org.apache.logging.log4j.LogManager.getLogger().
+3. Calls to org.apache.log4j.Logger.getRootLogger() or org.apache.log4j.LogManager.getRootLogger() must be replaced with org.apache.logging.log4j.LogManager.getRootLogger().
+4. Calls to org.apache.log4j.Logger.getLogger that accept a LoggerFactory must remove the org.apache.log4j.spi.LoggerFactory and use one of Log4j 2's other extension mechanisms.
+5. Replace calls to org.apache.log4j.Logger.getEffectiveLevel() with org.apache.logging.log4j.Logger.getLevel().
+6. Remove calls to org.apache.log4j.LogManager.shutdown(), they are not needed in version 2 because the Log4j Core now automatically adds a JVM shutdown hook on start up to perform any Core clean ups.
+7. Calls to org.apache.log4j.Logger.setLevel() or similar methods are not supported in the API. Applications should remove these. Equivalent functionality is provided in the Log4j 2 implementation classes but may leave the application susceptible to changes in Log4j 2 internals.
+8. Where appropriate, applications should convert to use parameterized messages instead of String concatenation.
+9. org.apache.
+
+fuente: https://logging.apache.org/log4j/2.0/manual/migration.html
+
+
+Log4j 2 API: https://logging.apache.org/log4j/2.x/javadoc.html
