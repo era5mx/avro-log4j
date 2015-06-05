@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- @see doc http://logging.apache.org/log4j/2.x/manual/configuration.html#XML -->
 <Configuration status="debug" name="RoutingTest"
     packages="org.apache.logging.log4j.test">
     <Properties>
