@@ -2,13 +2,6 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 
 //sourceCompatibility = 1.7
-version = '1.0'
-jar {
-    manifest {
-        attributes 'Implementation-Title': 'avro-log4j',
-                   'Implementation-Version': version
-    }
-}
 
 repositories {
     mavenCentral()
@@ -55,8 +48,8 @@ uploadArchives {
 jar {
     manifest {
         attributes 'Manifest-Version': ManifestVersion,
-                  // 'Main-Class': mainClass,
-                  // 'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                   //'Main-Class': mainClassName,
+                   'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
                    'Bundle-Description': BundleDescription,
                    'Implementation-Title': project.name,
                    'Implementation-Version': project.version,
